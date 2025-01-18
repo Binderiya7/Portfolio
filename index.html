@@ -4,121 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binderiya Tumurchuluun - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #0073e6;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        section {
-            padding: 20px;
-            background: white;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #0073e6;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0073e6;
-            color: white;
-        }
-        .hidden {
-            display: none;
-        }
-        .toggle-button {
-            background-color: #0073e6;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background: #333; color: #fff; padding: 10px 20px; text-align: center; }
+        nav { display: flex; justify-content: center; background: #444; padding: 10px; }
+        nav button { margin: 5px; padding: 10px; border: none; cursor: pointer; color: white; background: #555; }
+        nav button:hover { background: #777; }
+        .content { padding: 20px; display: none; }
+        .hidden { display: none; }
+        .toggle-container { text-align: center; margin-bottom: 20px; }
+        .experience-content { padding: 10px; background: #fff; border-radius: 5px; margin-top: 10px; }
     </style>
 </head>
 <body>
     <header>
         <h1>Binderiya Tumurchuluun</h1>
-        <p>UI/UX Designer | IT Support Specialist | Data Analyst</p>
+        <p>Computer Science Graduate | IT Support | Data Analytics</p>
     </header>
     
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I'm a UI/UX designer and IT specialist with experience in technical support, data analysis, and procurement. Passionate about creating intuitive user experiences and solving IT challenges.</p>
-            <button class="toggle-button" onclick="toggleVisibility('about')">Toggle About Me</button>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
+    <nav>
+        <button onclick="showSection('about')">About</button>
+        <button onclick="showSection('projects')">Projects</button>
+        <button onclick="showSection('experience')">Experience</button>
+        <button onclick="showSection('contact')">Contact</button>
+    </nav>
+    
+    <section id="about" class="content">
+        <h2>About Me</h2>
+        <p>Hi, I'm Binderiya Tumurchuluun, a Computer Science graduate with expertise in IT support, data analytics, and AI-driven solutions...</p>
+    </section>
+    
+    <section id="projects" class="content hidden">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>RFM Customer Segmentation</strong> - Analyzed customer purchasing behavior using Python and Plotly.</li>
+            <li><strong>British Aircraft Review Analysis</strong> - Designed a Tableau dashboard for detailed airline review insights.</li>
+            <li><strong>Student Athlete Scholarship App</strong> - Created a WebFlow prototype to estimate financial aid for athletes.</li>
+        </ul>
+    </section>
+    
+    <section id="experience" class="content hidden">
+        <h2>Work Experience</h2>
+        <div class="toggle-container">
+            <button onclick="toggleExperience('it-support')">IT Support</button>
+            <button onclick="toggleExperience('data-analytics')">Data Analytics</button>
+        </div>
+        
+        <div id="it-support" class="experience-content">
+            <h3>Instructional Technology Assistant | Albion College (09/2023 – 05/2024)</h3>
             <ul>
-                <li><strong>Kyoto Sushi UI Prototype</strong> - Designed a sleek and modern UI prototype using Figma.</li>
-                <li><strong>Disaster Tech UI/UX</strong> - Working on a UI/UX project for Disaster Tech with a focus on emergency management solutions.</li>
-                <li><strong>Employee Management System</strong> - Developed a database project for tracking employee data efficiently.</li>
+                <li>Diagnosed and resolved campus hardware/software issues, including 3D printers and VR headsets.</li>
+                <li>Assisted professors with Microsoft Teams and Zoom troubleshooting.</li>
             </ul>
-            <button class="toggle-button" onclick="toggleVisibility('projects')">Toggle Projects</button>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
+        </div>
+        
+        <div id="data-analytics" class="experience-content hidden">
+            <h3>AI/ML Intern | Fin Digital (06/2023 – 08/2023)</h3>
             <ul>
-                <li>UI/UX Design (Figma, Adobe XD)</li>
-                <li>IT Support & Troubleshooting</li>
-                <li>Data Analysis (SQL, Excel, Power BI)</li>
-                <li>Web Development (HTML, CSS, JavaScript)</li>
-                <li>Cloud Computing (Microsoft DP-900 Certified)</li>
+                <li>Cleaned datasets using R for accurate data analysis.</li>
+                <li>Developed a prototype app for predicting student-athlete scholarships.</li>
             </ul>
-            <button class="toggle-button" onclick="toggleVisibility('skills')">Toggle Skills</button>
-        </section>
-
-        <section id="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li><strong>Disaster Tech (UI/UX Designer)</strong> - Alexandria, VA</li>
-                <li><strong>Fin Digital (AI & Machine Learning Intern)</strong></li>
-                <li><strong>Albion College (Instructional Technology Assistant)</strong></li>
-            </ul>
-            <button class="toggle-button" onclick="toggleVisibility('experience')">Toggle Experience</button>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:binderiya@example.com">binderiya@example.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/binderiya">linkedin.com/in/binderiya</a></p>
-            <button class="toggle-button" onclick="toggleVisibility('contact')">Toggle Contact</button>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Binderiya Tumurchuluun. All Rights Reserved.</p>
-    </footer>
-
+        </div>
+    </section>
+    
+    <section id="contact" class="content hidden">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:Binderya0124@gmail.com">Binderya0124@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/binderiyatumurchuluun/">linkedin.com/in/binderiyatumurchuluun</a></p>
+        <p>GitHub: <a href="https://github.com/Binderiya7">github.com/Binderiya7</a></p>
+    </section>
+    
     <script>
-        function toggleVisibility(sectionId) {
-            var section = document.getElementById(sectionId);
-            if (section.style.display === "none" || section.style.display === "") {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
-            }
+        function showSection(sectionId) {
+            document.querySelectorAll('.content').forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        
+        function toggleExperience(experienceId) {
+            document.querySelectorAll('.experience-content').forEach(section => section.classList.add('hidden'));
+            document.getElementById(experienceId).classList.remove('hidden');
         }
     </script>
 </body>
 </html>
+
