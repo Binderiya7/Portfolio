@@ -3,89 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binderiya Tumurchuluun - Portfolio</title>
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background: #333; color: #fff; padding: 10px 20px; text-align: center; }
-        nav { display: flex; justify-content: center; background: #444; padding: 10px; }
-        nav button { margin: 5px; padding: 10px; border: none; cursor: pointer; color: white; background: #555; }
-        nav button:hover { background: #777; }
-        .content { padding: 20px; display: none; }
-        .hidden { display: none; }
-        .toggle-container { text-align: center; margin-bottom: 20px; }
-        .experience-content { padding: 10px; background: #fff; border-radius: 5px; margin-top: 10px; }
-    </style>
 </head>
 <body>
     <header>
-        <h1>Binderiya Tumurchuluun</h1>
-        <p>Computer Science Graduate | IT Support | Data Analytics</p>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-    
-    <nav>
-        <button onclick="showSection('about')">About</button>
-        <button onclick="showSection('projects')">Projects</button>
-        <button onclick="showSection('experience')">Experience</button>
-        <button onclick="showSection('contact')">Contact</button>
-    </nav>
-    
-    <section id="about" class="content">
+    <section id="about">
         <h2>About Me</h2>
-        <p>Hi, I'm Binderiya Tumurchuluun, a Computer Science graduate with expertise in IT support, data analytics, and AI-driven solutions...</p>
+        <p>A brief introduction about yourself.</p>
     </section>
-    
-    <section id="projects" class="content hidden">
+    <section id="projects">
         <h2>Projects</h2>
-        <ul>
-            <li><strong>RFM Customer Segmentation</strong> - Analyzed customer purchasing behavior using Python and Plotly.</li>
-            <li><strong>British Aircraft Review Analysis</strong> - Designed a Tableau dashboard for detailed airline review insights.</li>
-            <li><strong>Student Athlete Scholarship App</strong> - Created a WebFlow prototype to estimate financial aid for athletes.</li>
-        </ul>
+        <p>Links to your projects with short descriptions.</p>
     </section>
-    
-    <section id="experience" class="content hidden">
-        <h2>Work Experience</h2>
-        <div class="toggle-container">
-            <button onclick="toggleExperience('it-support')">IT Support</button>
-            <button onclick="toggleExperience('data-analytics')">Data Analytics</button>
-        </div>
-        
-        <div id="it-support" class="experience-content">
-            <h3>Instructional Technology Assistant | Albion College (09/2023 – 05/2024)</h3>
-            <ul>
-                <li>Diagnosed and resolved campus hardware/software issues, including 3D printers and VR headsets.</li>
-                <li>Assisted professors with Microsoft Teams and Zoom troubleshooting.</li>
-            </ul>
-        </div>
-        
-        <div id="data-analytics" class="experience-content hidden">
-            <h3>AI/ML Intern | Fin Digital (06/2023 – 08/2023)</h3>
-            <ul>
-                <li>Cleaned datasets using R for accurate data analysis.</li>
-                <li>Developed a prototype app for predicting student-athlete scholarships.</li>
-            </ul>
-        </div>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Include a form or your email/social links.</p>
     </section>
-    
-    <section id="contact" class="content hidden">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:Binderya0124@gmail.com">Binderya0124@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/binderiyatumurchuluun/">linkedin.com/in/binderiyatumurchuluun</a></p>
-        <p>GitHub: <a href="https://github.com/Binderiya7">github.com/Binderiya7</a></p>
-    </section>
-    
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.content').forEach(section => section.style.display = 'none');
-            document.getElementById(sectionId).style.display = 'block';
-        }
-        
-        function toggleExperience(experienceId) {
-            document.querySelectorAll('.experience-content').forEach(section => section.classList.add('hidden'));
-            document.getElementById(experienceId).classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
-
